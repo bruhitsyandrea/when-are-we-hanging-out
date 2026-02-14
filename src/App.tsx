@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { supabase } from "./supabase";
 import "./App.css";
 
@@ -47,6 +47,11 @@ function App() {
     setOrderNumber(randomOrder);
     setView("confirmation");
   };
+  
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [view]);
+  
   
 
   const options = [
@@ -187,8 +192,26 @@ function App() {
           <p>for: {customerName}</p>
           <p>Your order has been sent to the barista.</p>
           <p>If accepted, you will be contacted shortly.</p>
+
+          <button
+            type="button"
+            onClick={() => {
+              setSelectedOptions([]);
+              setCustomerName("");
+              setSelectedDate("");
+              setDetailsText("");
+              setContactText("");
+            
+              setClosing(false); // 👈 THIS IS THE FIX
+              setView("menu");
+            }}
+            
+          >
+            Back to Café
+          </button>
         </div>
       )}
+
     </div>
   );
 }
