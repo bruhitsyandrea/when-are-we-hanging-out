@@ -94,6 +94,7 @@ function App() {
             <p>LATE NIGHT SPECIAL</p>
             <p>STUDY SESSION</p>
             <p>YUM YUM</p>
+            <p>SIDE QUESTS MAYBE</p>
             <p>SURPRISE ME</p>
           </div>
 
