@@ -14,7 +14,7 @@ serve(async (req) => {
 
   await resend.emails.send({
     from: "onboarding@resend.dev",
-    to: "lisachen20000226@gmail.com",
+    to: "youremailaddress",
     subject: `New Café Order from ${record.name}`,
     html: `
       <div style="font-family: monospace; max-width: 400px;">
